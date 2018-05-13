@@ -5,7 +5,6 @@ import Layout from '@/components/Layout'
 
 Vue.use(Router)
 
-
 export default new Router({
   routes: [
     {
