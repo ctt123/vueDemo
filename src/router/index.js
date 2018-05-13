@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import First from '@/components/First'
+import Layout from '@/components/Layout'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/first',
-      name: 'First',
-      component: First
+      path: '/layout',
+      name: 'Layout',
+      component: Layout
     }
   ]
 })
