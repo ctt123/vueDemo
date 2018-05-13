@@ -1,24 +1,10 @@
 <template>
   <div class="container">
     <div class="con1 box">
-      <div class="div1">
-        <div class="div2">
-          <div class="div3">
-            <div class="div4">
-              <div class="div3 div5"></div>
-            </div>
-            <div class="div4">
-              <div class="div3 div5"></div>
-            </div>
-            <div class="div4">
-              <div class="div3 div5"></div>
-            </div>
-            <div class="div4">
-              <div class="div3 div5"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="con1-box"></div>
+      <div class="con1-box"></div>
+      <div class="con1-box"></div>
+      <div class="con1-box"></div>
     </div>
     <div class="con2 box">
       <div class="con2-box"></div>
@@ -49,48 +35,30 @@
   }
 
   .box {
-    padding: 10px;
-    border-bottom: 1px dashed gray;
+    padding: 15px;
+    border-bottom: 1px dashed #cccccc;
   }
 
   .con1 {
     margin: 0 0;
-  }
-
-  .div1 {
-    width: 100%;
-  }
-
-  .div2 {
     position: relative;
-    padding-top: 100%;
-    background-color: #000;
   }
 
-  .div3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-  }
-
-  .div4 {
-    width: 50%;
-    height: 0;
-    background-color: red;
-    position: relative;
-    padding-top: 50%;
-    float: left;
-  }
-
-  .div5 {
-    background-color: gray;
+  .con1-box{
+    width:50%;
+    height:50%;
+    background-color: #cccccc;
+    float:left;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 5px solid #fff;
+    border:5px solid #fff;
+  }
+
+  .con1-box:before {
+    content: '';
+    display: inline-block;
+    padding-bottom:100%;
   }
 
   .con2 {
@@ -105,7 +73,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 5px solid #fff;
-    background-color: gray;
+    background-color: #cccccc;
   }
 
   .con3 {
@@ -120,7 +88,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 5px solid #fff;
-    background-color: gray;
+    background-color: #cccccc;
   }
 
   .con3-box2 {
@@ -129,7 +97,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     border: 5px solid #fff;
-    background-color: gray;
+    background-color: #cccccc;
     width: calc(100% - 105px);
   }
 
