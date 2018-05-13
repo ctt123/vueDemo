@@ -4,7 +4,6 @@
       <li>
       <router-link to="/layout">Layout</router-link>
       </li>
-
     </ul>
   </div>
 </template>

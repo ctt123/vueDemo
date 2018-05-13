@@ -46,19 +46,21 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  html,body{
-    height:100%;
-    width:100%;
+  html, body {
+    height: 100%;
+    width: 100%;
   }
+
   .container {
     display: flex;
     flex-direction: column;
   }
 
-  .box{
-    padding:10px;
-    border-bottom:1px dashed gray;
+  .box {
+    padding: 10px;
+    border-bottom: 1px dashed gray;
   }
+
   .con1 {
     margin: 0 0;
   }
@@ -71,7 +73,6 @@
     position: relative;
     padding-top: 100%;
     background-color: #000;
-    /*margin-right:-10px;*/
   }
 
   .div3 {
@@ -89,7 +90,7 @@
     background-color: red;
     position: relative;
     padding-top: 50%;
-    float:left;
+    float: left;
   }
 
   .div5 {
@@ -97,38 +98,39 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border:5px solid #fff;
+    border: 5px solid #fff;
   }
 
-  .con2{
+  .con2 {
     display: flex;
     flex-direction: row;
   }
 
-  .con2-box{
+  .con2-box {
     flex-grow: 1;
-    height:150px;
+    height: 150px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border:5px solid #fff;
+    border: 5px solid #fff;
     background-color: gray;
   }
 
-  .con3{
+  .con3 {
     display: flex;
     flex-direction: row;
   }
 
-  .con3-box1{
+  .con3-box1 {
     width: 105px;
-    height:150px;
+    height: 150px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border:5px solid #fff;
+    border: 5px solid #fff;
     background-color: gray;
   }
+
   .con3-box2 {
     height: 150px;
     -webkit-box-sizing: border-box;
