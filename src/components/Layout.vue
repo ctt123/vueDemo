@@ -58,6 +58,10 @@
       <div class="con3-box1"></div>
       <div class="con3-box2"></div>
     </div>
+    <div class="con4 box">
+      <div class="con4-box1"></div>
+      <div class="con4-box2"></div>
+    </div>
 
   </div>
 </template>
@@ -125,12 +129,12 @@
   .con2 {
     margin: -10px 0 0 -10px;
     font-size: 0;
-    overflow-x:scroll;
+    overflow-x: scroll;
     white-space: nowrap;
   }
 
   .con2-box {
-    display:inline-block;
+    display: inline-block;
     width: 105px;
     height: 160px;
     margin: 10px 0 0 10px;
@@ -139,14 +143,14 @@
 
   .con3 {
     margin: -10px 0 0 -10px;
-    position:relative;
+    position: relative;
   }
 
   .con3-box1 {
     width: 105px;
     height: 160px;
     background-color: #cccccc;
-    position:absolute;
+    position: absolute;
     top: 30px;
     left: 30px;
   }
@@ -157,4 +161,23 @@
     background-color: #cccccc;
   }
 
+  .con4 {
+    margin: -10px 0 0 -10px;
+    display: flex;
+  }
+
+  .con4-box1 {
+    width: 105px;
+    height: 160px;
+    margin:10px 0 0 10px;
+    background-color: #cccccc;
+    flex: none;
+  }
+
+  .con4-box2 {
+    height: 160px;
+    margin: 10px 0 0 10px;
+    background-color: #cccccc;
+    flex: 1;
+  }
 </style>
