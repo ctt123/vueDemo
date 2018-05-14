@@ -21,7 +21,7 @@
         <div class="con1-box-content">
         </div>
       </div>
-
+      <div class="clear"></div>
     </div>
     <div class="con2 box">
       <div class="con2-box"></div>
@@ -46,11 +46,6 @@
     width: 100%;
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
   .box {
     padding: 20px;
     border-bottom: 1px dashed #cccccc;
@@ -59,6 +54,10 @@
   .con1 {
     position: relative;
     margin: -10px 0 0 -10px;
+  }
+
+  .clear{
+    clear:both;
   }
 
   .con1-box {
