@@ -1,10 +1,27 @@
 <template>
   <div class="container">
     <div class="con1 box">
-      <div class="con1-box"></div>
-      <div class="con1-box"></div>
-      <div class="con1-box"></div>
-      <div class="con1-box"></div>
+      <div class="con1-box">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box">
+        <div class="con1-box-content">
+        </div>
+      </div>
+
     </div>
     <div class="con2 box">
       <div class="con2-box"></div>
@@ -35,68 +52,65 @@
   }
 
   .box {
-    padding: 15px;
+    padding: 20px;
     border-bottom: 1px dashed #cccccc;
   }
 
   .con1 {
-    margin: 0 0;
     position: relative;
+    margin: -10px 0 0 -10px;
   }
 
-  .con1-box{
-    width:50%;
-    height:50%;
-    background-color: #cccccc;
-    float:left;
+  .con1-box {
+    padding: 10px 0 0 10px;
+    width: 50%;
+    float: left;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border:5px solid #fff;
   }
 
-  .con1-box:before {
-    content: '';
+  .con1-box-content {
     display: inline-block;
-    padding-bottom:100%;
+    width: 100%;
+    background-color: #cccccc;
+  }
+  .con1-box-content:before {
+    content: '';
+    height:0;
+    display: inline-block;
+    padding-top: 100%;
   }
 
   .con2 {
     display: flex;
     flex-direction: row;
+    margin:-10px 0 0 -10px;
   }
 
   .con2-box {
     flex-grow: 1;
     height: 150px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 5px solid #fff;
+    margin:10px 0 0 10px;
     background-color: #cccccc;
   }
 
   .con3 {
     display: flex;
     flex-direction: row;
+    margin:-10px 0 0 -10px;
   }
 
   .con3-box1 {
     width: 105px;
     height: 150px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 5px solid #fff;
+    margin:10px 0 0 10px;
     background-color: #cccccc;
   }
 
   .con3-box2 {
     height: 150px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 5px solid #fff;
+    margin:10px 0 0 10px;
     background-color: #cccccc;
     width: calc(100% - 105px);
   }
