@@ -149,6 +149,7 @@
     height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
+    flex:none;
   }
 
   .con3-box2 {
