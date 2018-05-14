@@ -139,24 +139,22 @@
 
   .con3 {
     margin: -10px 0 0 -10px;
-    white-space: nowrap;
-    font-size: 0;
-    display:flex;
+    position:relative;
   }
 
   .con3-box1 {
     width: 105px;
     height: 160px;
-    margin: 10px 0 0 10px;
     background-color: #cccccc;
-    flex:none;
+    position:absolute;
+    top: 30px;
+    left: 30px;
   }
 
   .con3-box2 {
     height: 160px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 125px;
     background-color: #cccccc;
-    flex:1;
   }
 
 </style>
