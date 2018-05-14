@@ -23,6 +23,28 @@
       </div>
       <div class="clear"></div>
     </div>
+    <div class="con1 box con1-inline-block">
+      <div class="con1-box-in">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box-in">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box-in">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box-in">
+        <div class="con1-box-content">
+        </div>
+      </div>
+      <div class="con1-box-in">
+        <div class="con1-box-content">
+        </div>
+      </div>
+    </div>
     <div class="con2 box">
       <div class="con2-box"></div>
       <div class="con2-box"></div>
@@ -56,8 +78,13 @@
     margin: -10px 0 0 -10px;
   }
 
-  .clear{
-    clear:both;
+  .con1-inline-block {
+    font-size: 0;
+    text-align: justify;
+  }
+
+  .clear {
+    clear: both;
   }
 
   .con1-box {
@@ -69,14 +96,24 @@
     box-sizing: border-box;
   }
 
+  .con1-box-in {
+    padding: 10px 0 0 10px;
+    width: 50%;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
   .con1-box-content {
     display: inline-block;
     width: 100%;
     background-color: #cccccc;
   }
+
   .con1-box-content:before {
     content: '';
-    height:0;
+    height: 0;
     display: inline-block;
     padding-top: 100%;
   }
@@ -84,32 +121,32 @@
   .con2 {
     display: flex;
     flex-direction: row;
-    margin:-10px 0 0 -10px;
+    margin: -10px 0 0 -10px;
   }
 
   .con2-box {
     flex-grow: 1;
     height: 150px;
-    margin:10px 0 0 10px;
+    margin: 10px 0 0 10px;
     background-color: #cccccc;
   }
 
   .con3 {
     display: flex;
     flex-direction: row;
-    margin:-10px 0 0 -10px;
+    margin: -10px 0 0 -10px;
   }
 
   .con3-box1 {
     width: 105px;
     height: 150px;
-    margin:10px 0 0 10px;
+    margin: 10px 0 0 10px;
     background-color: #cccccc;
   }
 
   .con3-box2 {
     height: 150px;
-    margin:10px 0 0 10px;
+    margin: 10px 0 0 10px;
     background-color: #cccccc;
     width: calc(100% - 105px);
   }
