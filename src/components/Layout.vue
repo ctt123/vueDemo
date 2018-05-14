@@ -111,7 +111,6 @@
   }
 
   .con1-box-content {
-    display: inline-block;
     width: 100%;
     background-color: #cccccc;
   }
@@ -142,6 +141,7 @@
     margin: -10px 0 0 -10px;
     white-space: nowrap;
     font-size: 0;
+    display:flex;
   }
 
   .con3-box1 {
@@ -149,15 +149,13 @@
     height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
-    display:inline-block;
   }
 
   .con3-box2 {
     height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
-    width: calc(100% - 125px);
-    display: inline-block;
+    flex:1;
   }
 
 </style>
