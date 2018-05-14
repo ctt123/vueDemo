@@ -84,7 +84,6 @@
 
   .con1-inline-block {
     font-size: 0;
-    text-align: justify;
   }
 
   .con1-clear:after {
@@ -127,37 +126,38 @@
   .con2 {
     margin: -10px 0 0 -10px;
     font-size: 0;
-    text-align: justify;
     overflow-x:scroll;
     white-space: nowrap;
   }
 
   .con2-box {
     display:inline-block;
-    width: 53px;
-    height: 80px;
+    width: 105px;
+    height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
   }
 
   .con3 {
-    display: flex;
-    flex-direction: row;
     margin: -10px 0 0 -10px;
+    white-space: nowrap;
+    font-size: 0;
   }
 
   .con3-box1 {
     width: 105px;
-    height: 150px;
+    height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
+    display:inline-block;
   }
 
   .con3-box2 {
-    height: 150px;
+    height: 160px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
-    width: calc(100% - 105px);
+    width: calc(100% - 125px);
+    display: inline-block;
   }
 
 </style>
