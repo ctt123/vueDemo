@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="con1 box">
+    <div class="con1 box con1-clear">
       <div class="con1-box">
         <div class="con1-box-content">
         </div>
@@ -21,7 +21,6 @@
         <div class="con1-box-content">
         </div>
       </div>
-      <div class="clear"></div>
     </div>
     <div class="con1 box con1-inline-block">
       <div class="con1-box-in">
@@ -46,6 +45,11 @@
       </div>
     </div>
     <div class="con2 box">
+      <div class="con2-box"></div>
+      <div class="con2-box"></div>
+      <div class="con2-box"></div>
+      <div class="con2-box"></div>
+      <div class="con2-box"></div>
       <div class="con2-box"></div>
       <div class="con2-box"></div>
       <div class="con2-box"></div>
@@ -83,7 +87,9 @@
     text-align: justify;
   }
 
-  .clear {
+  .con1-clear:after {
+    content: '';
+    display: block;
     clear: both;
   }
 
@@ -119,14 +125,17 @@
   }
 
   .con2 {
-    display: flex;
-    flex-direction: row;
     margin: -10px 0 0 -10px;
+    font-size: 0;
+    text-align: justify;
+    overflow-x:scroll;
+    white-space: nowrap;
   }
 
   .con2-box {
-    flex-grow: 1;
-    height: 150px;
+    display:inline-block;
+    width: 53px;
+    height: 80px;
     margin: 10px 0 0 10px;
     background-color: #cccccc;
   }
