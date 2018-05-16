@@ -4,6 +4,12 @@
       <li>
         <router-link to="/layout">Layout</router-link>
       </li>
+      <li>
+        <router-link to="/Middle">Middle</router-link>
+      </li>
+      <li>
+        <router-link to="/Middle2">Middle2</router-link>
+      </li>
     </ul>
 
   </div>
