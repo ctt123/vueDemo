@@ -1,11 +1,11 @@
 <template>
-<div>
-<div class="modal">
-<div class="content">
-puchi
-</div>
-</div>
-</div>
+  <div>
+    <div class="modal">
+      <div class="content">
+        puchi
+      </div>
+    </div>
+  </div>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
