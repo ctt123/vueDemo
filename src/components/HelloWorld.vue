@@ -2,7 +2,7 @@
   <div class="hello">
     <ul>
       <li>
-        <router-link to="/layout">Layout</router-link>
+        <router-link to="/Layout">Layout</router-link>
       </li>
       <li>
         <router-link to="/Middle">Middle</router-link>
@@ -10,21 +10,11 @@
       <li>
         <router-link to="/Middle2">Middle2</router-link>
       </li>
+      <router-link to="/test1">Test1</router-link>
     </ul>
 
   </div>
 </template>
-
-<script>
-  export default {
-    name: 'HelloWorld',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    }
-  }
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

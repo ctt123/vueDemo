@@ -71,10 +71,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
 
   .box {
     padding: 20px;
