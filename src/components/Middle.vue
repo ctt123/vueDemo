@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <div class="modal">
-      <div class="content">
-        puchi
-      </div>
+  <div class="modal">
+    <div class="content">
+      puchi
     </div>
   </div>
 </template>

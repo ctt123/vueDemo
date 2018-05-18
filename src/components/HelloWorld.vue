@@ -2,13 +2,13 @@
   <div class="hello">
     <ul>
       <li>
-        <router-link to="/Layout">Layout</router-link>
+        <router-link to="/layout">Layout</router-link>
       </li>
       <li>
-        <router-link to="/Middle">Middle</router-link>
+        <router-link to="/middle">Middle</router-link>
       </li>
       <li>
-        <router-link to="/Middle2">Middle2</router-link>
+        <router-link to="/middle2">Middle2</router-link>
       </li>
       <router-link to="/test1">Test1</router-link>
     </ul>
