@@ -7,7 +7,7 @@
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped="">
   .con {
     display: flex;
     justify-content: center;
