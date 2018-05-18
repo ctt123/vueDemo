@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class="item-detail">
-          <span class="item-detail-detail">{{item.detail}}</span><span class="point">*</span><span
+          <span class="item-detail-detail">{{item.detail}}</span><span class="point">·</span><span
           class="item-detail-desc">{{item.desc}}</span>
         </div>
         <div class="item-title">
@@ -35,7 +35,7 @@
         </div>
         <div class="item-right">
           <div class="item-detail">
-            <span class="item-detail-detail">{{item.detail}}</span><span class="point">*</span><span
+            <span class="item-detail-detail">{{item.detail}}</span><span class="point">·</span><span
             class="item-detail-desc">{{item.desc}}</span>
           </div>
           <div class="item-title">
@@ -250,6 +250,7 @@ export default {
   .point {
     padding: 0 4px;
     vertical-align: middle;
+    color:#999999;
   }
 
   .item-dis-o-price{
