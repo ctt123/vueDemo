@@ -18,17 +18,18 @@
           {{item.title}}
         </div>
         <div class="item-price">
-          <span class="item-price-price">{{item.price}}</span>元起
+          <span class="item-price-price">{{item.price}}</span><span class="item-price-span">元起</span>
+          <span class="item-dis-o-price">￥{{item.oPrice}}</span>
         </div>
       </div>
     </div>
-    <div class="list1" v-for="item in list1">
+    <div class="list1" v-for="item in list1" v-bind:key="item.id">
       <div class="list1-item">
         <div class="item-left">
           <div v-if="item.discount" class="item-discount item-discount-lb">
             <div class="item-dis-content">
               <p class="item-dis-name">帮砍价</p>
-              <span class="item-dis-num">-{{item.discount}}</span>元
+              <span class="item-dis-num">-{{item.discount}}</span><span class="fs9">元</span>
             </div>
           </div>
         </div>
@@ -60,13 +61,15 @@ export default {
         title: '商店名称商店名称商店名称商店名称商店名称商店名称',
         price: 1999,
         discount: 300,
-        desc: '本季新品 不去等一年'
+        desc: '本季新品 不去等一年',
+        oPrice: 4999
       }, {
         id: 2,
         detail: '机+酒',
         title: '商店名称商店名称商店名称商店名称商店名称商店名称',
         price: 1999,
-        desc: '本季新品 不去等一年'
+        desc: '本季新品 不去等一年',
+        oPrice: 4999
       }],
       list1: [{
         id: 3,
@@ -74,7 +77,8 @@ export default {
         title: '商店名称商店名称商店名称商店名称商店名称商店名称',
         price: 1999,
         discount: 300,
-        desc: '本季新品 不去等一年'
+        desc: '本季新品 不去等一年',
+        oPrice: 4999
       }]
     }
   }
@@ -84,7 +88,6 @@ export default {
 <style>
   .con {
     padding: 25px 20px;
-    font-size: 10px;
   }
 
   .list {
@@ -113,9 +116,16 @@ export default {
     position: relative;
   }
 
-  .fs9{
-    font-size: 9px;
+  .fs9 {
+    display:inline-block;
+    font-size: 12px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
   }
+
   .item-pic:after {
     content: '';
     height: 0;
@@ -128,11 +138,23 @@ export default {
   }
 
   .item-detail-detail {
+    font-size: 12px;
     color: #3183A1;
+    -webkit-transform: scale(0.83);
+    -moz-transform: scale(0.83);
+    -ms-transform: scale(0.83);
+    -o-transform: scale(0.83);
+    transform: scale(0.83);
   }
 
   .item-detail-desc {
+    font-size: 12px;
     color: #999999;
+    -webkit-transform: scale(0.83);
+    -moz-transform: scale(0.83);
+    -ms-transform: scale(0.83);
+    -o-transform: scale(0.83);
+    transform: scale(0.83);
   }
 
   .item-title {
@@ -151,13 +173,13 @@ export default {
     border-radius: 28px;
     background-color: #999999;
     position: absolute;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .item-discount-rb {
-    right: 0;
+    right: 5px;
     bottom: 0;
   }
 
@@ -166,20 +188,13 @@ export default {
     bottom: 0;
   }
 
-  /*.item-dis-content {*/
-    /*position:absolute;*/
-    /*left:50%;*/
-    /*top:50%;*/
-    /*margin-left:-22px;*/
-    /*margin-top:-22px;*/
-  /*}*/
-
   .item-dis-name {
     font-family: PingFangSC;
     font-weight: bold;
     margin: 0;
-    font-size: 9px;
+    font-size: 12px;
     text-align: center;
+    transform: scale(0.75);
   }
 
   .item-dis-num {
@@ -193,10 +208,20 @@ export default {
   .item-price {
     margin-top: 4px;
     color: #E96A65;
+    font-size: 12px;
   }
 
   .item-price-price {
     font-size: 16px;
+  }
+
+  .item-price-span {
+    font-size: 12px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
   }
 
   .list1 {
@@ -225,5 +250,17 @@ export default {
   .point {
     padding: 0 4px;
     vertical-align: middle;
+  }
+
+  .item-dis-o-price{
+    margin-left:8px;
+    font-size: 12px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transform: scale(0.75);
+    color: #999999;
+    text-decoration:line-through;
   }
 </style>
