@@ -84,11 +84,12 @@
     mounted () {
       new Swiper('.swiper-container', {
         slidesPerView: 2,
-        spaceBetween: 10,
+        spaceBetween: 10
       })
     }
   }
 </script>
+
 <style scoped>
   .swiper-container{
     padding:10px;
@@ -99,7 +100,6 @@
     height: 100%;
   }
 
-
   .list-item {
     display: inline-block;
     float: left;
@@ -109,6 +109,4 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-
-
 </style>
