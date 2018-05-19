@@ -1,27 +1,7 @@
 <template>
   <div class="con">
     <div class="list">
-      <div class="list-item" v-for="item in list" v-bind:key="item.id">
-        <div class="item-pic">
-          <div v-if="item.discount" class="item-discount item-discount-rb">
-            <div class="item-dis-content">
-              <p class="item-dis-name">帮砍价</p>
-              <span class="item-dis-num">-{{item.discount}}</span><span class="fs9">元</span>
-            </div>
-          </div>
-        </div>
-        <div class="item-detail">
-          <span class="item-detail-detail">{{item.detail}}</span><span class="point">·</span><span
-          class="item-detail-desc">{{item.desc}}</span>
-        </div>
-        <div class="item-title">
-          {{item.title}}
-        </div>
-        <div class="item-price">
-          <span class="item-price-price">{{item.price}}</span><span class="item-price-span">元起</span>
-          <span class="item-dis-o-price">￥{{item.oPrice}}</span>
-        </div>
-      </div>
+      <my-cards :cards="list"></my-cards>
     </div>
     <div class="list1" v-for="item in list1" v-bind:key="item.id">
       <div class="list1-item">
@@ -51,38 +31,48 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      list: [{
-        id: 1,
-        detail: '机+酒',
-        title: '商店名称商店名称商店名称商店名称商店名称商店名称',
-        price: 1999,
-        discount: 300,
-        desc: '本季新品 不去等一年',
-        oPrice: 4999
-      }, {
-        id: 2,
-        detail: '机+酒',
-        title: '商店名称商店名称商店名称商店名称商店名称商店名称',
-        price: 1999,
-        desc: '本季新品 不去等一年',
-        oPrice: 4999
-      }],
-      list1: [{
-        id: 3,
-        detail: '机+酒',
-        title: '商店名称商店名称商店名称商店名称商店名称商店名称',
-        price: 1999,
-        discount: 300,
-        desc: '本季新品 不去等一年',
-        oPrice: 4999
-      }]
+  import MyCards from './Cards.vue'
+
+  export default {
+    components: {MyCards},
+    name: 'HelloWorld',
+    data() {
+      return {
+        list: [{
+          id: 1,
+          detail: '机+酒',
+          title: '商店名称商店名称商店名称商店名称商店名称商店名称',
+          price: 1999,
+          discount: 300,
+          desc: '本季新品 不去等一年',
+          oPrice: 4999
+        }, {
+          id: 2,
+          detail: '机+酒',
+          title: '商店名称商店名称商店名称商店名称商店名称商店名称',
+          price: 1999,
+          desc: '本季新品 不去等一年',
+          oPrice: 4999
+        }, {
+          id: 3,
+          detail: '机+酒',
+          title: '商店名称商店名称商店名称商店名称商店名称商店名称',
+          price: 1999,
+          desc: '本季新品 不去等一年',
+          oPrice: 4999
+        }],
+        list1: [{
+          id: 3,
+          detail: '机+酒',
+          title: '商店名称商店名称商店名称商店名称商店名称商店名称',
+          price: 1999,
+          discount: 300,
+          desc: '本季新品 不去等一年',
+          oPrice: 4999
+        }]
+      }
     }
   }
-}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped="">
@@ -100,24 +90,8 @@ export default {
     clear: both;
   }
 
-  .list-item {
-    display: inline-block;
-    float: left;
-    width: 50%;
-    padding: 10px 0 0 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  .item-pic {
-    width: 100%;
-    background-color: #cccccc;
-    position: relative;
-  }
-
   .fs9 {
-    display:inline-block;
+    display: inline-block;
     font-size: 12px;
     -webkit-transform: scale(0.75);
     -moz-transform: scale(0.75);
@@ -215,15 +189,6 @@ export default {
     font-size: 16px;
   }
 
-  .item-price-span {
-    font-size: 12px;
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
-  }
-
   .list1 {
     margin-top: 20px;
   }
@@ -250,18 +215,6 @@ export default {
   .point {
     padding: 0 4px;
     vertical-align: middle;
-    color:#999999;
-  }
-
-  .item-dis-o-price{
-    margin-left:8px;
-    font-size: 12px;
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transform: scale(0.75);
     color: #999999;
-    text-decoration:line-through;
   }
 </style>
