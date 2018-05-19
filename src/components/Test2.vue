@@ -82,17 +82,18 @@
     },
     methods: {},
     mounted () {
-      new Swiper('.swiper-container', {
-        slidesPerView: 2,
-        spaceBetween: 10
+      const mySwiper = new Swiper('.swiper-container', {
+        spaceBetween: 10,
+        slidesPerView: 2
       })
+      console.log(mySwiper)
     }
   }
 </script>
 
 <style scoped>
-  .swiper-container{
-    padding:10px;
+  .swiper-container {
+    padding: 20px;
   }
 
   .swiper-wrapper {
