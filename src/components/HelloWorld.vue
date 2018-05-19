@@ -10,7 +10,12 @@
       <li>
         <router-link to="/middle2">Middle2</router-link>
       </li>
-      <router-link to="/test1">Test1</router-link>
+      <li>
+        <router-link to="/test1">Test1</router-link>
+      </li>
+      <li>
+        <router-link to="/test2">Test2</router-link>
+      </li>
     </ul>
 
   </div>

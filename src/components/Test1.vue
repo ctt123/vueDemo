@@ -35,7 +35,7 @@
 
   export default {
     components: {MyCards},
-    name: 'HelloWorld',
+    name: 'Test1',
     data () {
       return {
         list: [{
@@ -75,7 +75,7 @@
   }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped="">
+<style>
   .con {
     padding: 25px 20px;
   }
