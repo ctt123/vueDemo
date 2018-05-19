@@ -21,7 +21,7 @@
   export default {
     name: 'Test2',
     components: {MyCard},
-    data() {
+    data () {
       return {
         list: [{
           id: 1,
@@ -81,8 +81,8 @@
       }
     },
     methods: {},
-    mounted() {
-      var a=new Swiper('.swiper-container', {
+    mounted () {
+      new Swiper('.swiper-container', {
         slidesPerView: 3
       })
     }
@@ -94,7 +94,6 @@
     height: 100%;
   }
 
-
   .list-item {
     display: inline-block;
     float: left;
@@ -104,5 +103,4 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-
 </style>
