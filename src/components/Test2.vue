@@ -82,9 +82,8 @@
     },
     methods: {},
     mounted() {
-      var a = new Swiper('.swiper-container', {
-        slidesPerView: 3,
-        spaceBetween: 30,
+      var a=new Swiper('.swiper-container', {
+        slidesPerView: 3
       })
     }
   }
@@ -94,6 +93,7 @@
     width: 100%;
     height: 100%;
   }
+
 
   .list-item {
     display: inline-block;
@@ -105,8 +105,4 @@
     box-sizing: border-box;
   }
 
-  .swiper-slide {
-    width: 148px!important;
-    margin-right: 0!important;
-  }
 </style>
