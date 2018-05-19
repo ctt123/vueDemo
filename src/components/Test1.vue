@@ -36,7 +36,7 @@
   export default {
     components: {MyCards},
     name: 'HelloWorld',
-    data() {
+    data () {
       return {
         list: [{
           id: 1,
