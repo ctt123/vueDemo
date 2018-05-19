@@ -6,6 +6,7 @@ import Middle from '@/components/Middle'
 import Middle2 from '@/components/Middle2'
 import Test1 from '@/components/Test1'
 import Test2 from '@/components/Test2'
+import 'swiper/dist/css/swiper.css'
 
 Vue.use(Router)
 

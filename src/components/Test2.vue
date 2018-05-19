@@ -13,18 +13,13 @@
   </div>
 </template>
 <script>
-  import Swiper from 'swiper'
+//  import Swiper from 'swiper'
   import MyCard from './Card.vue'
-
-  var mySwiper = new Swiper('.swiper-container', {
-    speed: 400,
-    spaceBetween: 100
-  })
 
   export default {
     name: 'Test2',
     components: {MyCard},
-    data() {
+    data () {
       return {
         list: [{
           id: 1,
@@ -86,14 +81,13 @@
   }
 </script>
 <style scoped>
-
   .swiper-wrapper {
     width: 100%;
     height: 100%;
   }
 
   .swiper-slide {
-      width:150px;
+      width:166px;
   }
 
   .list-item {
