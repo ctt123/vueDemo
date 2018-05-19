@@ -1,25 +1,27 @@
 <template>
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" v-for="item in list" :key="item.id">
-      <my-card class="list-item"
-        :discount="item.discount"
-        :desc="item.desc"
-        :price="item.price"
-        :oPrice="item.oPrice"
-        :detail="item.detail"
-        :title="item.title">
-      </my-card>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="item in list" :key="item.id">
+        <my-card class="list-item"
+                 :discount="item.discount"
+                 :desc="item.desc"
+                 :price="item.price"
+                 :oPrice="item.oPrice"
+                 :detail="item.detail"
+                 :title="item.title">
+        </my-card>
+      </div>
     </div>
   </div>
 </template>
 <script>
-//  import Swiper from 'swiper'
+  import Swiper from 'swiper'
   import MyCard from './Card.vue'
 
   export default {
     name: 'Test2',
     components: {MyCard},
-    data () {
+    data() {
       return {
         list: [{
           id: 1,
@@ -77,6 +79,13 @@
           oPrice: 4999
         }]
       }
+    },
+    methods: {},
+    mounted() {
+      new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      })
     }
   }
 </script>
@@ -87,7 +96,7 @@
   }
 
   .swiper-slide {
-      width:166px;
+    width: 166px;
   }
 
   .list-item {
