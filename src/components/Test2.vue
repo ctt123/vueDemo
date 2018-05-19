@@ -83,24 +83,32 @@
     methods: {},
     mounted () {
       new Swiper('.swiper-container', {
-        slidesPerView: 3
+        slidesPerView: 2,
+        spaceBetween: 10,
       })
     }
   }
 </script>
 <style scoped>
+  .swiper-container{
+    padding:10px;
+  }
+
   .swiper-wrapper {
     width: 100%;
     height: 100%;
   }
 
+
   .list-item {
     display: inline-block;
     float: left;
     width: 100%;
-    padding: 10px 0 0 10px;
+    /*padding: 10px 0 0 10px;*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+
+
 </style>
