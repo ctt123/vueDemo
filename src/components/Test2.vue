@@ -82,7 +82,7 @@
     },
     methods: {},
     mounted() {
-      new Swiper('.swiper-container', {
+      var a=new Swiper('.swiper-container', {
         slidesPerView: 3,
         spaceBetween: 30,
       })
@@ -107,5 +107,9 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+
+  .swiper-slide{
+    margin-right:0!important;
   }
 </style>
