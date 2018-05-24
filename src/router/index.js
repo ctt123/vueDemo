@@ -6,6 +6,7 @@ import Middle from '@/components/Middle'
 import Middle2 from '@/components/Middle2'
 import Test1 from '@/components/Test1'
 import Test2 from '@/components/Test2'
+import Test3 from '@/components/Test3'
 
 Vue.use(Router)
 
@@ -35,6 +36,10 @@ export default new Router({
       path: '/test2',
       name: 'Test2',
       component: Test2
+    }, {
+      path: '/test3',
+      name: 'Test3',
+      component: Test3
     }
   ]
 })

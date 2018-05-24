@@ -1,4 +1,3 @@
-
 <script type="text/jsx">
   import MyCard from './Card.vue'
 
