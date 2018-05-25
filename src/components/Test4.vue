@@ -1,11 +1,16 @@
 <template>
   <div class="container">
-    <div class="tabs" ref="tabs">
-        <div class="tab" :class="{active:tab.isActive}" @click="goAnchor('#anchor-'+tab.id,index)"
-             v-for="(tab,index) in tabs" ref="tab"
-             :key="tab.id">
-          {{tab.name + index}}
+    <div class="tabs">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(tab,index) in tabs"
+               :key="tab.id">
+            <div class="tab" :class="{active:tab.isActive}" @click="goAnchor('#anchor-'+tab.id,index)">
+              {{tab.name + index}}
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="content-container" ref="con" @scroll="changeContent()">
@@ -69,6 +74,7 @@
     },
     methods: {
       goAnchor(selector, index) {
+        console.log(index)
         const contentContainer = this.$refs.con;
         contentContainer.scrollTop = this.contentHeightArr[index];
       },
@@ -77,9 +83,6 @@
           this.tabs[this.oIndex].isActive = false;
           this.oIndex = index;
           this.tabs[index].isActive = true;
-          console.log(this.$refs.tab[index-1].offsetLeft)
-//          this.$el.querySelector('.tabs').scrollLeft=this.tabs[index - 1].offsetLeft;
-          this.$refs.tabs.scrollLeft=this.$refs.tab[index-1].offsetLeft-10;
         }
       },
       changeContent() {
@@ -89,7 +92,7 @@
 //          console.log(contentContainer.scrollTop)
 //          console.log(this.contentHeightArr[i+1])
           if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {//scrollTop比arr[i]大，那么oIndex就是i
-            this.getLight(i);
+//            this.getLight(i);
 //            console.log(i)
             return;
           }
@@ -97,8 +100,33 @@
       }
     },
     mounted() {
+      let that = this;
+      let currentIndex;
+      that.tab = new Swiper('.swiper-container', {
+        spaceBetween: 10,
+        slidesPerView: 3,
+//        centeredSlides: false,
+//        initialSlide: 0
+        on: {
+          slideChange() {
+            console.log(this.activeIndex)
+//            that.oIndex=this.activeIndex;
+          },
+          touchEnd() {
+            console.log(that.oIndex)
+            let a = (that.$el.querySelector('.swiper-slide').clientWidth + 10) * (that.oIndex - 1);//10是spaceBetween，没取到
+            console.log(a);
+            this.setTranslate(a)
+          }
+        }
+      })
+      ;
+
+      this.tab.on('tab', function () {
+        alert(1)
+      })
+
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
-      console.log(document.body.scrollWidth)
     }
   }
 </script>
@@ -119,9 +147,10 @@
     /*left: 0;*/
     background-color: #cccccc;
     font-size: 0;
+    /*overflow-x: scroll;*/
+    /*white-space: nowrap;*/
     padding: 5px 10px;
-    overflow-x: scroll;
-    white-space: nowrap;
+    /*display:flex;*/
   }
 
   .tab {
@@ -130,10 +159,15 @@
     color: #fff;
     font-size: 12px;
     display: inline-block;
-    width: 110px;
+    width: 100%;
     height: 30px;
-    margin-right:10px;
     line-height: 30px;
+    /*margin-right:5px;*/
+  }
+
+  .tabs-position {
+    width: 100%;
+    height: 40px;
   }
 
   .content {
