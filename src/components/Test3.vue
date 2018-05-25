@@ -3,9 +3,9 @@
     <div class="tabs">
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" @click="goAnchor('#anchor-'+tab.id,index)" v-for="(tab,index) in tabs"
-               :key="tab.id">
-            <div class="tab" :class="{active:tab.isActive}">
+          <div class="swiper-slide" v-for="(tab,index) in tabs"
+                 :key="tab.id" @click="goAnchor('#anchor-'+tab.id,index)" >
+            <div class="tab" :class="{active:tab.isActive}"  >
               {{tab.name}}
             </div>
           </div>
@@ -13,7 +13,6 @@
       </div>
     </div>
 
-    <div class="tabs-position"></div>
     <div class="content-container" ref="con" @scroll="changeContent()">
       <div class="content" v-for="tab in tabs" :id="'anchor-'+tab.id" :key="tab.id">
         {{tab.content}}
@@ -74,17 +73,13 @@
       }
     },
     methods: {
-      goAnchor(selector) {
-        const anchor = this.$el.querySelector(selector)
+      goAnchor(selector,index) {
+        console.log(index)
         const contentContainer = this.$refs.con;
-        var a=anchor.offsetTop-40;
-        console.log(a)
-        contentContainer.scrollTop = a
-        console.log(contentContainer.scrollTop)
+        contentContainer.scrollTop = this.contentHeightArr[index];
       },
       getLight(index) {
         if (this.oIndex !== index) {
-          console.log(index)
           this.tabs[this.oIndex].isActive = false;
           this.oIndex = index;
           this.tabs[index].isActive = true;
@@ -93,61 +88,67 @@
       changeContent() {
         const contentContainer = this.$refs.con;
         for (let i = 0; i < this.contentHeightArr.length; i++) {
-          console.log(i)
-          console.log(contentContainer.scrollTop)
-//          if ( contentContainer.scrollTop+i*10>= this.contentHeightArr[i]) {//scrollTop比arr[i]大，那么oIndex就是i
-//            this.getLight(i);
-//            return;
-//          }
+//          console.log(this.contentHeightArr[i])
+//          console.log(contentContainer.scrollTop)
+//          console.log(this.contentHeightArr[i+1])
+          if ( (contentContainer.scrollTop>= this.contentHeightArr[i]-1)&&(contentContainer.scrollTop< this.contentHeightArr[i+1]-1)) {//scrollTop比arr[i]大，那么oIndex就是i
+            this.getLight(i);
+//            console.log(i)
+            return;
+          }
         }
       }
     },
     mounted() {
       this.tab = new Swiper('.swiper-container', {
         spaceBetween: 10,
-        slidesPerView: 4,
-        centeredSlides: false,
-        initialSlide: 0
+        slidesPerView: 3,
+        slideToClickedSlide:true
+//        centeredSlides: false,
+//        initialSlide: 0
       });
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
-      console.log(this.contentHeightArr)
     }
   }
 </script>
 
 <style scoped>
   .container {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     height: 100%;
-    font-size:0;
+    font-size: 0;
   }
 
   .tabs {
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
     flex: none;
-    height:40px;
-    top:0;
-    left:0;
+    /*top: 0;*/
+    /*left: 0;*/
     background-color: #cccccc;
+    font-size: 0;
+    /*overflow-x: scroll;*/
+    /*white-space: nowrap;*/
+    padding:5px 10px;
+    /*display:flex;*/
   }
 
   .tab {
-    height: 20px;
     text-align: center;
-    vertical-align: middle;
     background-color: #999;
     color: #fff;
-    margin-top:10px;
     font-size: 12px;
-    line-height: 20px;
+    display:inline-block;
+    width:100%;
+    height:30px;
+    line-height: 30px;
+    /*margin-right:5px;*/
   }
 
   .tabs-position {
     width: 100%;
-    height: 20px;
+    height: 40px;
   }
 
   .content {
@@ -156,13 +157,14 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     background-color: #999999;
-    font-size:12px;
-    margin-bottom:10px;
+    font-size: 12px;
+    margin-bottom: 10px;
   }
 
   .content-container {
     overflow: scroll;
     flex: 1;
+    padding:10px;
   }
 
   .active {
