@@ -19,11 +19,9 @@
   </div>
 </template>
 <script>
-  import Swiper from 'swiper'
-
   export default {
     name: 'Test3',
-    data() {
+    data () {
       return {
         tabs: [
           {
@@ -68,35 +66,30 @@
       }
     },
     methods: {
-      goAnchor(selector, index) {
-        const contentContainer = this.$refs.con;
-        contentContainer.scrollTop = this.contentHeightArr[index];
+      goAnchor (selector, index) {
+        const contentContainer = this.$refs.con
+        contentContainer.scrollTop = this.contentHeightArr[index]
       },
-      getLight(index) {
+      getLight (index) {
         if (this.oIndex !== index) {
-          this.tabs[this.oIndex].isActive = false;
-          this.oIndex = index;
-          this.tabs[index].isActive = true;
+          this.tabs[this.oIndex].isActive = false
+          this.oIndex = index
+          this.tabs[index].isActive = true
           console.log(this.$refs.tab[index-1].offsetLeft)
-//          this.$el.querySelector('.tabs').scrollLeft=this.tabs[index - 1].offsetLeft;
-          this.$refs.tabs.scrollLeft=this.$refs.tab[index-1].offsetLeft-10;
+          this.$refs.tabs.scrollLeft=this.$refs.tab[index-1].offsetLeft-10
         }
       },
-      changeContent() {
-        const contentContainer = this.$refs.con;
+      changeContent () {
+        const contentContainer = this.$refs.con
         for (let i = 0; i < this.contentHeightArr.length; i++) {
-//          console.log(this.contentHeightArr[i])
-//          console.log(contentContainer.scrollTop)
-//          console.log(this.contentHeightArr[i+1])
           if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {//scrollTop比arr[i]大，那么oIndex就是i
-            this.getLight(i);
-//            console.log(i)
-            return;
+            this.getLight(i)
+            return
           }
         }
       }
     },
-    mounted() {
+    mounted () {
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
       console.log(document.body.scrollWidth)
     }
@@ -155,6 +148,4 @@
   .active {
     background-color: aqua;
   }
-
-
 </style>
