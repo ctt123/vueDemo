@@ -70,12 +70,7 @@
         const contentContainer = this.$refs.con
         contentContainer.scrollTop = this.contentHeightArr[index]
         if (index > 4) {
-          if (this.oIndex !== index) {
-            this.tabs[this.oIndex].isActive = false
-            this.oIndex = index
-            console.log(index)
-            this.tabs[index].isActive = true
-          }
+          this.getLight(index)
         }
       },
       getLight (index) {
@@ -84,15 +79,17 @@
           this.oIndex = index
           console.log(index)
           this.tabs[index].isActive = true
-          console.log(this.$refs.tab[index - 1].offsetLeft)
-          this.$refs.tabs.scrollLeft = this.$refs.tab[index - 1].offsetLeft - 10
         }
+      },
+      tabLeft (index) {
+        this.$refs.tabs.scrollLeft = index > 1 ? (this.$refs.tab[index - 1].offsetLeft - 10) : 0
       },
       changeContent () {
         const contentContainer = this.$refs.con
         for (let i = 0; i < this.contentHeightArr.length; i++) {
           if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {
             this.getLight(i)
+            this.tabLeft(i)
             return
           }
         }
