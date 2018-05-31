@@ -13,9 +13,6 @@
         {{tab.content}}
       </div>
     </div>
-    <div class="contents">
-
-    </div>
   </div>
 </template>
 <script>
@@ -77,12 +74,11 @@
         if (this.oIndex !== index) {
           this.tabs[this.oIndex].isActive = false
           this.oIndex = index
-          console.log(index)
           this.tabs[index].isActive = true
         }
       },
       tabLeft (index) {
-        this.$refs.tabs.scrollLeft = index > 1 ? (this.$refs.tab[index - 1].offsetLeft - 10) : 0
+        this.$refs.tabs.scrollLeft = this.$refs.tab[index].offsetLeft - document.body.clientWidth / 2 + this.$refs.tab[index].clientWidth / 2
       },
       changeContent () {
         const contentContainer = this.$refs.con
@@ -97,7 +93,7 @@
     },
     mounted () {
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
-      console.log(document.body.scrollWidth)
+      console.log(document.body.clientWidth)
     }
   }
 </script>
@@ -111,11 +107,7 @@
   }
 
   .tabs {
-    /*position: fixed;*/
-    width: 100%;
     flex: none;
-    /*top: 0;*/
-    /*left: 0;*/
     background-color: #cccccc;
     font-size: 0;
     padding: 5px 10px;
@@ -129,7 +121,7 @@
     color: #fff;
     font-size: 12px;
     display: inline-block;
-    width: 110px;
+    width: 80px;
     height: 30px;
     margin-right: 10px;
     line-height: 30px;
@@ -137,6 +129,7 @@
 
   .content {
     min-height: 200px;
+    width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
