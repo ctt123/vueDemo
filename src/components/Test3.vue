@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="tabs" ref="tabs">
-        <div class="tab" :class="{active:tab.isActive}" @click="goAnchor('#anchor-'+tab.id,index)"
-             v-for="(tab,index) in tabs" ref="tab"
-             :key="tab.id">
-          {{tab.name + index}}
-        </div>
+      <div class="tab" :class="{active:tab.isActive}" @click="goAnchor('#anchor-'+tab.id,index)"
+           v-for="(tab,index) in tabs" ref="tab"
+           :key="tab.id">
+        {{tab.name + index}}
+      </div>
     </div>
 
     <div class="content-container" ref="con" @scroll="changeContent()">
@@ -69,20 +69,29 @@
       goAnchor (selector, index) {
         const contentContainer = this.$refs.con
         contentContainer.scrollTop = this.contentHeightArr[index]
+        if (index > 4) {
+          if (this.oIndex !== index) {
+            this.tabs[this.oIndex].isActive = false
+            this.oIndex = index
+            console.log(index)
+            this.tabs[index].isActive = true
+          }
+        }
       },
       getLight (index) {
         if (this.oIndex !== index) {
           this.tabs[this.oIndex].isActive = false
           this.oIndex = index
+          console.log(index)
           this.tabs[index].isActive = true
-          console.log(this.$refs.tab[index-1].offsetLeft)
-          this.$refs.tabs.scrollLeft=this.$refs.tab[index-1].offsetLeft-10
+          console.log(this.$refs.tab[index - 1].offsetLeft)
+          this.$refs.tabs.scrollLeft = this.$refs.tab[index - 1].offsetLeft - 10
         }
       },
       changeContent () {
         const contentContainer = this.$refs.con
         for (let i = 0; i < this.contentHeightArr.length; i++) {
-          if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {//scrollTop比arr[i]大，那么oIndex就是i
+          if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {
             this.getLight(i)
             return
           }
@@ -125,7 +134,7 @@
     display: inline-block;
     width: 110px;
     height: 30px;
-    margin-right:10px;
+    margin-right: 10px;
     line-height: 30px;
   }
 
