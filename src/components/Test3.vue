@@ -96,6 +96,9 @@
     mounted () {
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
       console.log(document.body.clientWidth)
+    },
+    updated () {
+      this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
     }
   }
 </script>
