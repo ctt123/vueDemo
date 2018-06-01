@@ -104,50 +104,15 @@
 </script>
 
 <style scoped>
-  .container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-size: 0;
-  }
+  .container {  display: flex;  flex-direction: column;  height: 100%;  font-size: 0;  }
 
-  .tabs {
-    flex: none;
-    background-color: #cccccc;
-    font-size: 0;
-    padding: 5px 10px;
-    overflow-x: scroll;
-    white-space: nowrap;
-  }
+  .tabs {  flex: none;  background-color: #cccccc;  font-size: 0;  padding: 5px 10px;  overflow-x: scroll;  white-space: nowrap;  }
 
-  .tab {
-    text-align: center;
-    background-color: #999;
-    color: #fff;
-    font-size: 12px;
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    margin-right: 10px;
-    line-height: 30px;
-  }
+  .tab {  text-align: center;  background-color: #999;  color: #fff;  font-size: 12px;  display: inline-block;  width: 80px;  height: 30px;  margin-right: 10px;  line-height: 30px;  }
 
-  .content {
-    min-height: 200px;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background-color: #999999;
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
+  .content {  min-height: 200px;  width: 100%;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  background-color: #999999;  font-size: 12px;  margin-bottom: 10px;  }
 
-  .content-container {
-    overflow: scroll;
-    flex: 1;
-    padding: 10px;
-  }
+  .content-container {  overflow: scroll;  flex: 1;  padding: 10px;  }
 
   /*.light-enter {*/
     /*background: red;*/
@@ -158,7 +123,5 @@
     /*transition: background 5.5s;*/
   /*}*/
 
-  .active {
-    background: aqua;
-  }
+  .active {  background: aqua;  }
 </style>
