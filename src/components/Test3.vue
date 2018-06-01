@@ -63,11 +63,13 @@
       }
     },
     methods: {
+      // 点击tab，滚动至对应div，tab变亮
       goAnchor (selector, index) {
         const contentContainer = this.$refs.con
         contentContainer.scrollTop = this.contentHeightArr[index]
         this.getLight(index)
       },
+      // tab变亮
       getLight (index) {
         if (this.oIndex !== index) {
           this.tabs[this.oIndex].isActive = false
@@ -75,15 +77,17 @@
           this.tabs[index].isActive = true
         }
       },
-      tabLeft (index) {
+      // tab居中
+      tabCenter (index) {
         this.$refs.tabs.scrollLeft = this.$refs.tab[index].offsetLeft - document.body.clientWidth / 2 + this.$refs.tab[index].clientWidth / 2
       },
+      // scroll滚动出发事件
       changeContent () {
         const contentContainer = this.$refs.con
         for (let i = 0; i < this.contentHeightArr.length; i++) {
           if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {
             this.getLight(i)
-            this.tabLeft(i)
+            this.tabCenter(i)
             return
           }
         }
