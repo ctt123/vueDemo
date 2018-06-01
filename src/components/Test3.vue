@@ -66,9 +66,7 @@
       goAnchor (selector, index) {
         const contentContainer = this.$refs.con
         contentContainer.scrollTop = this.contentHeightArr[index]
-        if (index > 4) {
-          this.getLight(index)
-        }
+        this.getLight(index)
       },
       getLight (index) {
         if (this.oIndex !== index) {
@@ -144,7 +142,16 @@
     padding: 10px;
   }
 
+  /*.light-enter {*/
+    /*background: red;*/
+    /*-webkit-transition: background 5.5s;*/
+    /*-moz-transition: background 5.5s;*/
+    /*-ms-transition: background 5.5s;*/
+    /*-o-transition: background 5.5s;*/
+    /*transition: background 5.5s;*/
+  /*}*/
+
   .active {
-    background-color: aqua;
+    background: aqua;
   }
 </style>
