@@ -83,6 +83,7 @@
       },
       // scroll滚动出发事件
       changeContent () {
+        this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
         const contentContainer = this.$refs.con
         for (let i = 0; i < this.contentHeightArr.length; i++) {
           if ((contentContainer.scrollTop >= this.contentHeightArr[i] - 1) && (contentContainer.scrollTop < this.contentHeightArr[i + 1] - 1)) {
@@ -95,10 +96,7 @@
     },
     mounted () {
       this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
-      console.log(document.body.clientWidth)
-    },
-    updated () {
-      this.contentHeightArr = this.tabs.map(item => this.$el.querySelector('#anchor-' + item.id).offsetTop - 40)
+//      console.log(document.body.clientWidth)
     }
   }
 </script>
